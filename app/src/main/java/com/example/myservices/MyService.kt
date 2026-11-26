@@ -33,6 +33,7 @@ class MyService: Service() {
                 log("Timer $i")
             }
         }
+        // version <= 8 (Android 8)
         return START_REDELIVER_INTENT
     }
 
