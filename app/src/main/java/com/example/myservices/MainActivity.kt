@@ -40,19 +40,24 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.foregroundService.setOnClickListener {
-            if (
-                Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
-                ContextCompat.checkSelfPermission(
-                    this,
-                    Manifest.permission.POST_NOTIFICATIONS
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                notificationPermissionLauncher.launch(
-                    Manifest.permission.POST_NOTIFICATIONS
-                )
-            } else {
-                showNotification()
-            }
+//            if (
+//                Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+//                ContextCompat.checkSelfPermission(
+//                    this,
+//                    Manifest.permission.POST_NOTIFICATIONS
+//                ) != PackageManager.PERMISSION_GRANTED
+//            ) {
+//                notificationPermissionLauncher.launch(
+//                    Manifest.permission.POST_NOTIFICATIONS
+//                )
+//            } else {
+//                showNotification()
+//            }
+
+            ContextCompat.startForegroundService(
+                this,
+                MyForegroundService.newIntent(this)
+            )
         }
     }
 
