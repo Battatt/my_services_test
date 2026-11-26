@@ -17,5 +17,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+
+        binding.simpleService.setOnClickListener {
+            startService(MyService.newIntent(this))
+        }
     }
 }
