@@ -28,6 +28,8 @@
         </service>
         <service android:name=".MyForegroundService" android:foregroundServiceType="shortService">
         </service>
+        <service android:name=".MyIntentService">
+        </service>
     </application>
 
 </manifest>
